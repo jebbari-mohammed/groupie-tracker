@@ -21,7 +21,7 @@ func ArtistsHandler(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "errors/500.html")
 		return
 	}
-	id := r.URL.Query().Get("id")
+	id := r.FormValue("id")
 	idd, err := strconv.Atoi(id)
 	if err != nil {
 		w.WriteHeader(404)

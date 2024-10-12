@@ -9,6 +9,7 @@
     <h1>Groupie-tracker</h1>
     {{range .}}
     <h3>{{.NAME}}</h3>
+    <input type="hidden" name="id" value="{{.ID}}">
     <a href="/artists?id={{.ID}}" >
     <img src="{{.IMAGE}}">
     </a>
