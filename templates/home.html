@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <h1>Groupie-tracker</h1>
-    {{range .}}
-    <h3>{{.NAME}}</h3>
-    <input type="hidden" name="id" value="{{.ID}}">
-    <a href="/artists?id={{.ID}}" >
-    <img src="{{.IMAGE}}">
-    </a>
-   
-    <h3>{{range .MEMBERS}} {{.}}, {{end}} </h3>
-    <h3>{{.CREATIONDATES}}</h3>
-    <h3>{{.FIRSTALBUM}}</h3>
-    {{end}}
+    <div class="container">
+        {{range .}}
+        <div class="card">
+            <h3>{{.NAME}}</h3>
+            <input type="hidden" name="id" value="{{.ID}}">
+            <a href="/artists?id={{.ID}}">
+                <img src="{{.IMAGE}}">
+            </a>
+            <h3>{{range .MEMBERS}} {{.}}, {{end}}</h3>
+            <h3>{{.CREATIONDATES}}</h3>
+            <h3>{{.FIRSTALBUM}}</h3>
+        </div>
+        {{end}}
+    </div>
 </body>
 </html>
